@@ -23,6 +23,7 @@ export function Form({ onAddActivity }) {
         onAddActivity(newActivity);
         setActivity('');
         setIsGoodWeather(false);
+        
 
         event.target.reset(); // reset after submitting
 
