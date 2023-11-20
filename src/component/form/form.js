@@ -25,6 +25,14 @@ export function Form({ onAddActivity }) {
         onAddActivity(newActivity);
         setActivity('');
         setIsGoodWeather(false);
+
+        event.target.reset(); // reset after submitting
+
+        // Focus on the first input
+      const formElements = event.target.elements;
+      if (formElements && formElements.length > 0) {
+      formElements[0].focus();
+    }
       });
     
     return (
@@ -52,9 +60,5 @@ export function Form({ onAddActivity }) {
           </div>
           <button type="submit">Submit</button>
         </form>);
-
-
-
-
 };
 
