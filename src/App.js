@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function App() {
 const [activities, setActivities] = useState([]);
-
+// maybe we need this? (activities) =>
 const handleAddActivity = (newActivity) => {
   const activityWithId = {...newActivity, id: uuidv4() };
   setActivities([...activities, activityWithId]);
