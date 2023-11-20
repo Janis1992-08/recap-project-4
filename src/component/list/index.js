@@ -1,11 +1,11 @@
 export function List({activities, isGoodWeather}) {
 return (
 <div>
-<h2>Activities for {isGoodWeather ? "Good" : "Bad"} Weather: </h2>
+<h2>{isGoodWeather ? "The weather is awesome! Go outside and: " : "Bad weather outside! Here's what you can do now: "}</h2>
       <ul>
         {activities.map((activity, index) => (
           <li key={index}>
-            {activity.name} - Good Weather: {activity.isGoodWeather ? 'Yes' : 'No'}
+            {activity.name} 
           </li>
         ))}
       </ul>
