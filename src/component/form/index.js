@@ -1,9 +1,7 @@
 
 import { useState } from 'react';
 
-
-
-
+// hier brauchen wir noch einen useEffect !
 export function Form({ onAddActivity }) {
     const [activity, setActivity] = useState('');
     const [isGoodWeather, setIsGoodWeather] = useState(false)
@@ -16,7 +14,7 @@ export function Form({ onAddActivity }) {
         setIsGoodWeather(event.target.checked);
       };
     
-      const handleSubmit = (event => {
+      const handleSubmit = (event) => {
         event.preventDefault();
         const newActivity = {
           name: activity,
@@ -25,6 +23,7 @@ export function Form({ onAddActivity }) {
         onAddActivity(newActivity);
         setActivity('');
         setIsGoodWeather(false);
+        
 
         event.target.reset(); // reset after submitting
 
@@ -33,8 +32,8 @@ export function Form({ onAddActivity }) {
       if (formElements && formElements.length > 0) {
       formElements[0].focus();
     }
-      });
-    
+      };
+
     return (
         <form onSubmit={handleSubmit}>
           <h2>Activity Form</h2>
@@ -45,7 +44,7 @@ export function Form({ onAddActivity }) {
               id="activity"
               value={activity}
               onChange={handleActivityChange}
-            />
+            />  
           </div>
           <div>
             <label htmlFor="check">
@@ -61,4 +60,3 @@ export function Form({ onAddActivity }) {
           <button type="submit">Submit</button>
         </form>);
 };
-
