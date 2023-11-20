@@ -7,16 +7,19 @@ import useLocalStorageState from "use-local-storage-state";
 
 function App() {
 const [activities, setActivities] = useLocalStorageState("activities", {defaultValue: []});
+const isGoodWeather = true;
 
 const handleAddActivity = (newActivity) => {
   const activityWithId = {...newActivity, id: uuidv4()};
- console.log(newActivity); setActivities( [...activities, activityWithId]);
+setActivities( [...activities, activityWithId]);
 }
-console.log(activities)
+
+const filteredActivities = activities.filter( activity => activity.isGoodWeather === isGoodWeather);
+
   return (
     <div className="App">
       <Form onAddActivity={handleAddActivity} />
-      <List activities={activities}/>
+      <List activities={filteredActivities} isGoodWeather={isGoodWeather} />
     </div>
   );
 }

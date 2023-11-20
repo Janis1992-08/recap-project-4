@@ -1,9 +1,9 @@
 
 
-export function List({activities}) {
+export function List({activities, isGoodWeather}) {
 return (
 <div>
-<h2>Activities:</h2>
+<h2>Activities for {isGoodWeather ? "Good" : "Bad"} Weather: </h2>
       <ul>
         {activities.map((activity, index) => (
           <li key={index}>

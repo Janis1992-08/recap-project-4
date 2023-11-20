@@ -1,7 +1,5 @@
-
 import { useState } from 'react';
 
-// hier brauchen wir noch einen useEffect !
 export function Form({ onAddActivity }) {
     const [activity, setActivity] = useState('');
     const [isGoodWeather, setIsGoodWeather] = useState(false)
