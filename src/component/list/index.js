@@ -1,5 +1,3 @@
-
-
 export function List({activities, isGoodWeather}) {
 return (
 <div>
