@@ -40,6 +40,10 @@ function App() {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleDeleteActivity = (id) => {
+    const updatedActivities = activities.filter((activity) => activity.id !== id);
+    setActivities(updatedActivities);
+  };
 
   return (
     <div className="App">
@@ -49,7 +53,7 @@ function App() {
             <span>{weatherData.temperature}°C</span>
           </>
       </h2>
-      <List activities={filteredActivities} isGoodWeather={isGoodWeather} />
+      <List activities={filteredActivities} isGoodWeather={isGoodWeather} onDeleteActivity={handleDeleteActivity}/>
       <Form onAddActivity={handleAddActivity} setIsGoodWeather={setIsGoodWeather} />
     </div>
   );
